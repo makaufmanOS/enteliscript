@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enteliscript"
+version = "0.0.1"
+description = "Terminal application for CLI interaction with enteliWEB."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    { name = "Matt Kaufman" }
+]
+dependencies = [
+    "textual>=0.50.0",
+    "platformdirs>=4.0.0",
+    "requests>=2.0.0",
+    "rich>=13.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/makaufmanOS/enteliscript"
+Issues = "https://github.com/makaufmanOS/enteliscript/issues"
+
+[project.scripts]
+enteliscript = "enteliscript.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
