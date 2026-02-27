@@ -124,14 +124,15 @@ class TUI(App):
         """
         flow = [
             "[b]Logical flow:[/b]\n",
-            "  → setlogin [i](if first run)[/i]\n",
-            "  → login [i](to authenticate enteliWEB session)[/i]\n",
-            "  → setsite [i](to direct commands to a specific site)[/i]\n",
-            "  → [i]other commands[/i]\n\n",
+            "  → [cyan]setlogin[/cyan] [i](if first run)[/i]\n",
+            "  → [cyan]login[/cyan] [i](to authenticate enteliWEB session)[/i]\n",
+            "  → [cyan]setsite[/cyan] [i](to direct commands to a specific site)[/i]\n",
+            "  → [i]other commands[/i]\n",
         ]
         self.query_one(BlockableInput).focus()
-        self._log("Type [i]help[/i] to see commands.\n\n")
         self._log("".join(flow))
+        self._log("Type [i]help[/i] to list commands and their usage.\n\n")
+        
 
     
     async def on_input_submitted(self, event: Input.Submitted) -> None:
