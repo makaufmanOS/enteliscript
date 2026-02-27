@@ -112,7 +112,7 @@ class Commands:
         min_dots = 2
 
         for coloured_usage, plain_len, alias_text, summary in entries:
-            dots = "[yellow]" + "." * (max_usage_len - plain_len + min_dots) + "[/yellow]"
+            dots = "[dim]" + "." * (max_usage_len - plain_len + min_dots) + "[/dim]"
             summary_text = f"  {summary}" if summary else ""
             lines.append(f"  {coloured_usage}{alias_text}  {dots}{summary_text}")
 
