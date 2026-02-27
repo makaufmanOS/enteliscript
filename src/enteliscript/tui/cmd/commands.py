@@ -13,7 +13,7 @@ from typing import Callable
 from rich.markup import escape
 from ...enteliweb.api import EnteliwebAPI
 from ..types import CommandSpec, CommandResult
-from ...enteliweb.config import get_credentials, set_credentials
+from ...enteliweb.config import get_credentials, set_credentials, get_config_dir
 
 
 
@@ -117,6 +117,22 @@ class Commands:
             lines.append(f"  {coloured_usage}{alias_text}  {dots}{summary_text}")
 
         return CommandResult(True, "\n".join(lines))
+    
+
+    @command(
+        name    = "whereconfig",
+        usage   = "whereconfig",
+        summary = "Show the directory of the config and log files.",
+    )
+    def cmd_whereconfig(self) -> CommandResult:
+        """
+        Shows the directory for the config and log files.
+
+        ## Returns
+        - `CommandResult` with the path to the config directory, which is also where log files are stored.
+        """
+        config_dir = get_config_dir()
+        return CommandResult(True, f"Config directory: {config_dir}")
     
 
     @command(
