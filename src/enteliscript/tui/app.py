@@ -114,7 +114,7 @@ class TUI(App):
         """
         yield Header()
         with Vertical():
-            yield RichLog(id="log", wrap=True, highlight=True, markup=True)
+            yield RichLog(id="log", wrap=True, highlight=False, markup=True)
             yield BlockableInput(placeholder=self._input_placeholder, id="cmd")
     
 
@@ -181,6 +181,7 @@ class TUI(App):
                     self._log(f"{result.message}\n")
                 else:
                     self._log(f"[red]{result.message}[/red]\n")
+            event.input.value = ""
             return
 
         cmd, *args = parts
