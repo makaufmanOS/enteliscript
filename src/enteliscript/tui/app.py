@@ -32,7 +32,7 @@ class TUI(App):
     - `Ctrl+C` – Quit the application.
     """
     TITLE = "enteliscript TUI"
-    SUB_TITLE = "v0.1"
+    SUB_TITLE = "v0.1.5"
     CSS_PATH = Path(__file__).parent / "style.tcss"
     BINDINGS = [
         Binding("ctrl+c", "quit", "Quit"),
