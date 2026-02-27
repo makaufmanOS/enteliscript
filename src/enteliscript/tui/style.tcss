@@ -1,0 +1,9 @@
+/**
+ *  enteliscript.tui.style.tcss
+ *
+ *  Textual CSS stylesheet for the enteliscript TUI.
+ *  Controls the layout and appearance of the three primary UI regions:
+ *    #log – the scrollable RichLog output area (fills available vertical space)
+ *    #cmd – the command input bar (fixed height at the bottom)
+ *    #spinner – a single-line status area for blocking command feedback
+**/
