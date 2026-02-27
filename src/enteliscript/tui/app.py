@@ -121,8 +121,16 @@ class TUI(App):
         """
         Focuses the command input and displays the welcome message on startup.
         """
+        flow = [
+            "[b]Logical flow:[/b]\n",
+            "  → setlogin [i](if first run)[/i]\n",
+            "  → login [i](to authenticate enteliWEB session)[/i]\n",
+            "  → setsite [i](to direct commands to a specific site)[/i]\n",
+            "  → [i]other commands[/i]\n\n",
+        ]
         self.query_one(BlockableInput).focus()
-        self._log("[b]Welcome![/b] Type [i]help[/i] to see commands.\n")
+        self._log("Type [i]help[/i] to see commands.\n\n")
+        self._log("".join(flow))
 
     
     async def on_input_submitted(self, event: Input.Submitted) -> None:
