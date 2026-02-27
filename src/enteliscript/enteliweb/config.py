@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 from platformdirs import user_config_dir
 
-CONFIG_DIR = Path(user_config_dir("enteliscript"))
+CONFIG_DIR = Path(user_config_dir("enteliscript", appauthor=False))
 CONFIG_FILE = CONFIG_DIR / "config.json"
 
 
