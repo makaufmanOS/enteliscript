@@ -9,6 +9,7 @@ post-command actions such as clearing the log or launching the site selection mo
 """
 import shlex
 import asyncio
+from pathlib import Path
 from textual.binding import Binding
 from textual.containers import Vertical
 from .cmd.handler import CommandHandler
@@ -32,7 +33,7 @@ class TUI(App):
     """
     TITLE = "enteliscript TUI"
     SUB_TITLE = "v0.1"
-    CSS_PATH = "style.tcss"
+    CSS_PATH = Path(__file__).parent / "style.tcss"
     BINDINGS = [
         Binding("ctrl+c", "quit", "Quit"),
     ]
