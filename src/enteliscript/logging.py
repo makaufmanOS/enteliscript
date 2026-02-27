@@ -11,7 +11,7 @@ from platformdirs import user_log_dir
 from logging.handlers import RotatingFileHandler
 
 
-LOG_DIR = Path(user_log_dir("enteliscript"))
+LOG_DIR = Path(user_log_dir("enteliscript", appauthor=False))
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / "enteliscript.log"
 
