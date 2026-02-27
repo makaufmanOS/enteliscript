@@ -7,3 +7,26 @@
  *    #cmd – the command input bar (fixed height at the bottom)
  *    #spinner – a single-line status area for blocking command feedback
 **/
+
+Screen {
+    layout: vertical;
+}
+
+#log {
+    height: 1fr;
+    border: round $surface;
+    padding: 1;
+    scrollbar-visibility: hidden;
+}
+
+#cmd {
+    height: 3;
+    border: round $surface;
+    padding: 0 1;
+}
+
+#spinner {
+    height: 1;
+    color: $accent;
+    padding-left: 1;
+}
