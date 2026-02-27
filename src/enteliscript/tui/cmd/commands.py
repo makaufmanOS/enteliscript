@@ -100,10 +100,21 @@ class Commands:
             return CommandResult(True, "\n".join(details))
 
         lines = ["Commands:"]
+        entries = []
         for spec in sorted(unique_specs, key=lambda s: s.name):
             alias_text = f" [{', '.join(spec.aliases)}]" if spec.aliases else ""
-            summary = f" - {spec.summary}" if spec.summary else ""
-            lines.append(f"  {spec.usage}{alias_text}{summary}")
+            # Reconstruct usage with the command name coloured cyan
+            args_part = spec.usage[len(spec.name):]  # everything after the bare name
+            coloured_usage = f"[cyan]{spec.name}[/cyan]{args_part}"
+            entries.append((coloured_usage, len(spec.usage) + len(alias_text), alias_text, spec.summary))
+
+        max_usage_len = max(plain_len for _, plain_len, _, _ in entries)
+        min_dots = 2  # minimum dots between the longest usage and the summary
+
+        for coloured_usage, plain_len, alias_text, summary in entries:
+            dots = "." * (max_usage_len - plain_len + min_dots)
+            summary_text = f"  {summary}" if summary else ""
+            lines.append(f"  {coloured_usage}{alias_text}  {dots}{summary_text}")
 
         return CommandResult(True, "\n".join(lines))
     
