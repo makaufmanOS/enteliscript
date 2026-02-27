@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enteliscript"
-version = "0.0.5"
+version = "0.0.6"
 description = "Terminal application for CLI interaction with enteliWEB."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -31,3 +31,6 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"enteliscript.tui" = ["*.tcss"]
