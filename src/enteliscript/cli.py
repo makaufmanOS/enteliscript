@@ -1,7 +1,10 @@
 """
-cli.py
+# enteliscript.cli
 
-Provides the command-line entry function (`main`) that creates and runs the `enteliscript` TUI.
+Defines the `main` entry point for the `enteliscript` command-line application.
+Loads stored credentials via `get_credentials`, constructs an `EnteliwebAPI` client, 
+and launches the Textual `TUI` application. This module is referenced by the `project.scripts` 
+entry point in `pyproject.toml`, making `enteliscript` available as a standalone terminal command after installation.
 """
 from .app import EnteliscriptTUI
 
