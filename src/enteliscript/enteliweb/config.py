@@ -46,6 +46,16 @@ def _save_config(config: dict) -> None:
     CONFIG_FILE.write_text(json.dumps(config, indent=2), encoding="utf-8")
 
 
+def get_config_dir() -> Path:
+    """
+    Gets the config directory's path.
+
+    ## Returns
+    - *Path* – The absolute path to the config directory.
+    """
+    return CONFIG_DIR.resolve()
+
+
 def get_config_path() -> Path:
     """
     Gets the config file's path.
